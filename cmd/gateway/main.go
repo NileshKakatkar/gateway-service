@@ -8,10 +8,7 @@ import (
 
 func main() {
 	cfg := gateway.LoadConfig()
-	app, err := gateway.NewApp(cfg)
-	if err != nil {
-		log.Fatal(err)
-	}
+	app := gateway.NewApp(cfg)
 	if err := app.Listen(":" + cfg.Port); err != nil {
 		log.Fatal(err)
 	}
